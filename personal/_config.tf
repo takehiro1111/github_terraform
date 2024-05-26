@@ -10,11 +10,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "github-state-terraform-takehiro1111"
-    key            = "hcl"
-    region         = "ap-northeast-1"
-    acl            = "private"
-    encrypt        = true
+    bucket  = "github-state-terraform-takehiro1111"
+    key     = "hcl"
+    region  = "ap-northeast-1"
+    acl     = "private"
+    encrypt = true
   }
 }
 
