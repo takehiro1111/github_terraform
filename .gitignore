@@ -1,3 +1,5 @@
 modules/token/**
 modules/user/**
-.terraform/**
+.terraform/modules/**
+.terraform/**/**
+.terraform/terraform.tfstate
