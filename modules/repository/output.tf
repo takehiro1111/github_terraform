@@ -8,6 +8,6 @@ output "github_pubnlic_repos" {
     {repo_name = "ecs-learning-course", visibility = "public" , archived = false , description = ""},
 
     # // Private
-    {repo_name = "hcl", visibility = "private" , archived = false , description = ""},
+    {repo_name = "aws_terraform", visibility = "private" , archived = false , description = ""},
   ]
 }
