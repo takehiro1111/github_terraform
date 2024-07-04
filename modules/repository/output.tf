@@ -8,6 +8,7 @@ output "github_pubnlic_repos" {
     {repo_name = "ecs-learning-course", visibility = "public" , archived = false , description = "udemyのデプロイに関するサンプルコート"},
     {repo_name = "python", visibility = "public" , archived = false , description = "pythonに関するコードを管理するリポジトリ"},
     {repo_name = "serverless", visibility = "public" , archived = false , description = "CDK,SDK,Lambdaのコード管理"},
+    {repo_name = "gcp_terraform", visibility = "public" , archived = false , description = "GCPに関するTerraformコード管理"},
 
     // Private
     {repo_name = "aws_terraform", visibility = "private" , archived = false , description = "AWSリソースをTerraformで管理するためのリポジトリ"},
