@@ -16,6 +16,8 @@ terraform {
     acl     = "private"
     encrypt = true
   }
+
+  required_version = "<= 1.9.0"
 }
 
 # ======================================
