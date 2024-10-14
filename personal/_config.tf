@@ -17,7 +17,7 @@ terraform {
     encrypt = true
   }
 
-  required_version = "<= 1.9.0"
+  required_version = "<= 1.9.5"
 }
 
 # ======================================
