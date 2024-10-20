@@ -10,8 +10,6 @@ output "github_pubnlic_repos" {
     {repo_name = "serverless", visibility = "public" , archived = false , description = "CDK,SDK,Lambdaのコード管理"},
     {repo_name = "gcp_terraform", visibility = "public" , archived = false , description = "GCPに関するTerraformコード管理"},
     {repo_name = "tutorial", visibility = "public" , archived = false , description = "プログラミング学習"},
-
-    // Private
-    {repo_name = "aws_terraform", visibility = "private" , archived = false , description = "AWSリソースをTerraformで管理するためのリポジトリ"},
+    {repo_name = "aws_terraform", visibility = "public" , archived = false , description = "AWSリソースをTerraformで管理するためのリポジトリ"},
   ]
 }
