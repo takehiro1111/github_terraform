@@ -5,6 +5,8 @@ resource "github_repository" "personal_repos" {
   description = each.value.description
   archived    = lookup(each.value, "archived", false)
   visibility  = each.value.visibility
+  delete_branch_on_merge = true
+  vulnerability_alerts = true
 
   lifecycle {
     ignore_changes = [
