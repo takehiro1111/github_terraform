@@ -5,7 +5,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "6.3"
+      version = "6.3.0"
     }
   }
 
@@ -17,7 +17,7 @@ terraform {
     encrypt = true
   }
 
-  required_version = "<= 1.9.8"
+  required_version = "1.9.8"
 }
 
 # ======================================
