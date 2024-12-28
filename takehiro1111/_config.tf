@@ -10,14 +10,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "github-state-terraform-takehiro1111"
-    key     = "hcl"
+    bucket  = "tfstate-github-685339645368"
+    key     = "state/state_gh"
     region  = "ap-northeast-1"
     acl     = "private"
     encrypt = true
   }
 
-  required_version = "1.9.8"
+  required_version = "1.10.3"
 }
 
 # ======================================
