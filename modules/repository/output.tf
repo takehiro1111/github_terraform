@@ -12,5 +12,7 @@ output "github_pubnlic_repos" {
     {repo_name = "tutorial", visibility = "public" , archived = false , description = "プログラミング学習"},
     {repo_name = "aws_terraform", visibility = "public" , archived = false , description = "AWSリソースをTerraformで管理するためのリポジトリ"},
     {repo_name = "flask", visibility = "public" , archived = false , description = "Flaskを用いたコードを管理するためのリポジトリ"},
+    {repo_name = "ts", visibility = "public" , archived = false , description = "TypeScriptの基礎学習"},
+
   ]
 }
