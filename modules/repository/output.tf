@@ -16,5 +16,6 @@ output "github_pubnlic_repos" {
     {repo_name = "az_terraform", visibility = "public" , archived = false , description = "Azure環境でのTerraform実装"},
     {repo_name = "prometheus", visibility = "public" , archived = false , description = "Prometheusの監視基盤の構築"},
     {repo_name = "locust", visibility = "public" , archived = false , description = "負荷試験ツールのLocustを構築"},
+    {repo_name = "k8s", visibility = "public" , archived = false , description = "Kubernetes関連の設定"},
   ]
 }
