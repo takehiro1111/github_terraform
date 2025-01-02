@@ -9,13 +9,33 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket  = "tfstate-github-685339645368"
-    key     = "state/state_gh"
-    region  = "ap-northeast-1"
-    acl     = "private"
-    encrypt = true
+  cloud {
+    organization = "github_terraform"
+    hostname     = "app.terraform.io"
+    workspaces {
+      project = "takehiro1111"
+      name = "production"
+    }
   }
+
+  # backend "remote" {
+  #   cloud {
+  #     organization = "github_terraform"
+  #     hostname     = "app.terraform.io"
+  #     workspaces {
+  #       project = "takehiro1111"
+  #     }
+  #   }
+  # }
+
+
+  # backend "s3" {
+  #   bucket  = "tfstate-github-685339645368"
+  #   key     = "state/state_gh"
+  #   region  = "ap-northeast-1"
+  #   acl     = "private"
+  #   encrypt = true
+  # }
 
   required_version = "1.10.3"
 }
