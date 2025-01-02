@@ -51,13 +51,13 @@ provider "github" {
 # ======================================
 # Module Block
 # ======================================
-module "token" {
-  source = "../modules/token/"
-}
+# module "token" {
+#   source = "../modules/token/"
+# }
 
-module "user" {
-  source = "../modules/user/"
-}
+# module "user" {
+#   source = "../modules/user/"
+# }
 
 module "repo" {
   source = "../modules/repository"
