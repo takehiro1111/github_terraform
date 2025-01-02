@@ -2,3 +2,4 @@ modules/token/**
 modules/user/**
 .terraform/
 **/.terraform
+**/.DS_Store
