@@ -14,7 +14,7 @@ terraform {
     hostname     = "app.terraform.io"
     workspaces {
       project = "takehiro1111"
-      name = "production"
+      name    = "production"
     }
   }
 
