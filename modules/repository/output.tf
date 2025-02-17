@@ -18,6 +18,6 @@ output "github_pubnlic_repos" {
     {repo_name = "locust", visibility = "public" , archived = false , description = "負荷試験ツールのLocustを構築"},
     {repo_name = "k8s", visibility = "public" , archived = false , description = "Kubernetes関連の設定"},
     {repo_name = "node", visibility = "public" , archived = false , description = "Node.jsを用いた実装"},
-    {repo_name = "menta", visibility = "public" , archived = false , description = "Mentaの学習用リポジトリ"},
+    {repo_name = "menta-python-lesson", visibility = "private" , archived = false , description = "Mentaの学習用リポジトリ"},
   ]
 }
