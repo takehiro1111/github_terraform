@@ -7,7 +7,7 @@ resource "github_repository" "personal_repos" {
   visibility             = each.value.visibility
   delete_branch_on_merge = true
   vulnerability_alerts   = true
-  allow_auto_merge       = true // for Renovate
+  allow_auto_merge       = lookup(each.value, "allow_auto_merge", true) // for Renovate
 
   lifecycle {
     ignore_changes = [
