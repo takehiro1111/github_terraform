@@ -21,5 +21,6 @@ output "github_pubnlic_repos" {
     {repo_name = "menta-python-lesson", visibility = "private" , archived = false , description = "Mentaの学習用リポジトリ"},
     {repo_name = "menta-typescript-lesson", visibility = "private" , archived = false , description = "Mentaの学習用リポジトリ"},
     {repo_name = "pytest", visibility = "public" , archived = false , description = "pytestの学習"},
+    {repo_name = "menta-flask-todo", visibility = "private" , archived = false , description = "pytestの学習"},
   ]
 }
