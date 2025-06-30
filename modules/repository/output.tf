@@ -23,5 +23,7 @@ output "github_pubnlic_repos" {
     {repo_name = "pytest", visibility = "public" , archived = false , description = "pytestの学習"},
     {repo_name = "menta-flask-todo", visibility = "private" , archived = false , description = "Flaskを用いたTODOアプリの実装", allow_auto_merge = false},
     {repo_name = "menta-go-lesson", visibility = "private" , archived = false , description = "Golangの学習用リポジトリ", allow_auto_merge = false},
+    {repo_name = "jest", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
+    {repo_name = "golang", visibility = "public" , archived = false , description = "Go言語の学習用", allow_auto_merge = false},
   ]
 }
