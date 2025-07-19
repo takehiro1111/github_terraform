@@ -25,5 +25,7 @@ output "github_pubnlic_repos" {
     {repo_name = "menta-go-lesson", visibility = "private" , archived = false , description = "Golangの学習用リポジトリ", allow_auto_merge = false},
     {repo_name = "jest", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
     {repo_name = "golang", visibility = "public" , archived = false , description = "Go言語の学習用", allow_auto_merge = false},
+    {repo_name = "hono", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
+    {repo_name = "engineer-job-tracking", visibility = "public" , archived = false , description = "エンジニアのオリジナルアプリ。", allow_auto_merge = false},
   ]
 }
