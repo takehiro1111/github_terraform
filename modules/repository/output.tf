@@ -28,5 +28,6 @@ output "github_pubnlic_repos" {
     {repo_name = "hono", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
     {repo_name = "engineer-job-tracking", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
     {repo_name = "menta-react-next", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
+    {repo_name = "cdk", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
   ]
 }
