@@ -30,6 +30,5 @@ output "github_pubnlic_repos" {
     { repo_name = "menta-react-next", visibility = "public", archived = false, description = "", allow_auto_merge = false },
     { repo_name = "cdk", visibility = "public", archived = false, description = "", allow_auto_merge = false },
     { repo_name = "dev-personal-log", visibility = "public", archived = false, description = "プライベートで触りたい技術スタックや学習ログ", allow_auto_merge = false },
-    { repo_name = "takehiro1111", visibility = "public", archived = false, description = "", allow_auto_merge = false },
   ]
 }
