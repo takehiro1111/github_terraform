@@ -43,7 +43,3 @@ provider "github" {
 module "repo" {
   source = "../modules/repository"
 }
-
-module "user" {
-  source = "../modules/user"
-}
