@@ -39,7 +39,7 @@ jobs:
           aqua_version: v2.53.3
 
       # 変更のあった作業ディレクトリを取得
-      - uses: suzuki-shunsuke/tfaction/list-targets@fe01abc967d9c7a9889abbb8502e2947a1dfece3 # v1.17.0
+      - uses: suzuki-shunsuke/tfaction/list-targets@7f13fd8815c30cde9c665b81e611c8ebdf9217b7 # v1.20.0
         id: list-targets
 
 
