@@ -10,8 +10,6 @@ on:
       - reopened    # PR再オープン時
     branches:
       - main    # mainブランチへのPRが対象
-    paths:
-      - 'master/**'
 
 env:
   AQUA_ROOT_DIR: /home/runner/.local/share/aquaproj-aqua
