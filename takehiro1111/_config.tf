@@ -9,13 +9,21 @@ terraform {
     }
   }
 
-  cloud {
-    organization = "github_terraform"
-    hostname     = "app.terraform.io"
-    workspaces {
-      project = "takehiro1111"
-      name    = "production"
-    }
+  // HCP Terraformはバージョン管理でエラーになるケースが目立つため使用しない。
+  # cloud {
+  #   organization = "github_terraform"
+  #   hostname     = "app.terraform.io"
+  #   workspaces {
+  #     project = "takehiro1111"
+  #     name    = "production"
+  #   }
+  # }
+
+  // masterアカウント
+  backend "s3" {
+    bucket = "tfstate-685339645368"
+    key    = "github/tfstate"
+    region = "ap-northeast-1"
   }
 
   required_version = "1.13.4"

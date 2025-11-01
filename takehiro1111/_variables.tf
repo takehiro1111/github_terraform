@@ -7,5 +7,5 @@ variable "github_token" {
 variable "github_admin_user" {
   description = "GitHub Admin User"
   type        = string
-  sensitive   = true
+  default = "takehiro1111"
 }

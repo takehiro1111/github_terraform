@@ -1,0 +1,114 @@
+name: Terraform Apply
+run-name: ${{ github.workflow }} by @${{ github.actor }}
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches:
+      - main    # mainブランチへのPRが対象
+    paths:
+      - 'takehiro1111/**'
+
+env:
+  AWS_REGION: ap-northeast-1
+  AQUA_ROOT_DIR: /home/runner/.local/share/aquaproj-aqua
+  TFACTION_CONFIG: tfaction-root.yaml
+  TFACTION_IS_APPLY: 'true'
+  
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  actions: read
+  issues: write  
+  
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      targets: ${{ steps.list-targets.outputs.targets }}
+    timeout-minutes: 300
+    if: ${{ ! contains(fromJson('["renovate[bot]", "dependabot[bot]"]'), github.actor) }}
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - uses: aquaproj/aqua-installer@d1fe50798dbadd4eb5b98957290ca175f6b4870f # v4.0.2
+        with:
+          aqua_version: v2.53.3
+
+      # 変更のあった作業ディレクトリを取得
+      - uses: suzuki-shunsuke/tfaction/list-targets@fe01abc967d9c7a9889abbb8502e2947a1dfece3 # v1.17.0
+        id: list-targets
+
+
+  terraform-apply:
+    needs: setup
+    if: join(fromJSON(needs.setup.outputs.targets), '') != ''
+    name: "terraform apply (${{ matrix.target.target }})"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        target: ${{ fromJSON(needs.setup.outputs.targets) }}
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      TFACTION_TARGET: ${{ matrix.target.target }}
+      TFACTION_JOB_TYPE: terraform
+      TFACTION_IS_APPLY: "true" # apply する場合は TFACTION_IS_APPLY を "true" に指定
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: aqua install
+        uses: aquaproj/aqua-installer@d1fe50798dbadd4eb5b98957290ca175f6b4870f # v4.0.2
+        with:
+          aqua_version: v2.53.3
+
+      - name: Generate Github token
+        id: generate_token
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2
+        with:
+          app_id: 2215622
+          private_key: ${{ secrets.SECRET_KEY }}
+
+      - name: Detect Terraform Version
+        env:
+          Environment: ${{ matrix.target.target }}
+        id: get_tf_version
+        run: |
+          cd ${{ env.Environment }} &&
+          TF_VERSION=$(cat .terraform-version)
+          echo TF_VERSION=$TF_VERSION >> $GITHUB_OUTPUT
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        id: setup_terraform
+        with:
+          terraform_version: ${{ steps.get_tf_version.outputs.TF_VERSION }}
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@b47578312673ae6fa5b5096b330d9fbac3d116df # v4
+        with:
+          aws-region: ${{env.AWS_REGION}}
+          role-to-assume: arn:aws:iam::685339645368:role/deploy-github-actions
+          role-session-name: GithubActions_AssumeRole
+
+      - name: terraform init
+        working-directory: ${{ matrix.target.target }}
+        run: |
+          terraform init -no-color
+    
+      - name: terraform apply
+        working-directory: ${{ matrix.target.target }}
+        run: |
+          tfcmt apply -- terraform apply -auto-approve -var="github_token=${{ secrets.PAT_TOKEN }}"
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
