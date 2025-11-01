@@ -33,8 +33,8 @@ terraform {
 # Provider Block
 # ======================================
 provider "github" {
-  owner = module.user.github_admin_user
-  token = module.user.github_token
+  owner = var.github_admin_user
+  token = var.github_token
 }
 
 # ======================================

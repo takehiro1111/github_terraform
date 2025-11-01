@@ -111,7 +111,8 @@ jobs:
         working-directory: ${{ matrix.target.target }}
         if: ${{ steps.init.outcome == 'success' }}
         run: |
-          tfcmt plan -patch -- terraform plan -no-color -input=false
+          tfcmt plan -patch -- terraform plan -no-color -input=false -var="github_token=${{ secrets.PAT_TOKEN }}"
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+
 

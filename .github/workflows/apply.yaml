@@ -108,6 +108,6 @@ jobs:
       - name: terraform apply
         working-directory: ${{ matrix.target.target }}
         run: |
-          tfcmt apply -- terraform apply -auto-approve
+          tfcmt apply -- terraform apply -auto-approve -var="github_token=${{ secrets.PAT_TOKEN }}"
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
