@@ -1,4 +1,4 @@
-name: Terraform Plan
+name: Terraform Plan2
 run-name: ${{ github.workflow }} by @${{ github.actor }}
 
 on:
