@@ -16,7 +16,16 @@ resource "github_repository" "personal_repos" {
       has_projects,
       has_wiki,
       pages,
-      homepage_url
+      homepage_url,
+      allow_auto_merge,
+      allow_merge_commit,
+      allow_rebase_merge,
+      allow_squash_merge,
+      delete_branch_on_merge,
+      merge_commit_message,
+      merge_commit_title,
+      squash_merge_commit_message,
+      squash_merge_commit_title,
     ]
   }
 }

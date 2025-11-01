@@ -5,17 +5,25 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = "6.7.4"
+      version = "6.7.3"
     }
   }
 
-  cloud {
-    organization = "github_terraform"
-    hostname     = "app.terraform.io"
-    workspaces {
-      project = "takehiro1111"
-      name    = "production"
-    }
+  // HCP Terraformはバージョン管理でエラーになるケースが目立つため使用しない。
+  # cloud {
+  #   organization = "github_terraform"
+  #   hostname     = "app.terraform.io"
+  #   workspaces {
+  #     project = "takehiro1111"
+  #     name    = "production"
+  #   }
+  # }
+
+  // masterアカウント
+  backend "s3" {
+    bucket = "tfstate-685339645368"
+    key    = "github/tfstate"
+    region = "ap-northeast-1"
   }
 
   required_version = "1.13.4"
@@ -25,8 +33,8 @@ terraform {
 # Provider Block
 # ======================================
 provider "github" {
-  owner = var.github_admin_user
-  token = var.github_token
+  owner = module.user.github_admin_user
+  token = module.user.github_token
 }
 
 # ======================================
@@ -34,4 +42,8 @@ provider "github" {
 # ======================================
 module "repo" {
   source = "../modules/repository"
+}
+
+module "user" {
+  source = "../modules/user"
 }
