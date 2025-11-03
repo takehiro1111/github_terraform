@@ -7,8 +7,6 @@ on:
     types: [closed]
     branches:
       - main    # mainブランチへのPRが対象
-    paths:
-      - 'takehiro1111/**'
 
 env:
   AWS_REGION: ap-northeast-1
