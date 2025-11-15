@@ -31,5 +31,6 @@ output "github_pubnlic_repos" {
     {repo_name = "dev-personal-log", visibility = "public" , archived = false , description = "プライベートで触りたい技術スタックや学習ログ", allow_auto_merge = false},
     {repo_name = "gin-api", visibility = "private" , archived = false , description = "Gin Web Frameworkを用いたAPI実装", allow_auto_merge = false},
     {repo_name = "gin-todo", visibility = "private" , archived = false , description = "Ginを用いたRest APIでのTodoアプリ", allow_auto_merge = false},
+    {repo_name = "nextjs-sandbox", visibility = "private" , archived = false , description = "Next.jsの学習用リポジトリ", allow_auto_merge = false},
   ]
 }
