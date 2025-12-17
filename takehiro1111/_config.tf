@@ -26,7 +26,7 @@ terraform {
     region = "ap-northeast-1"
   }
 
-  required_version = "1.14.2"
+  required_version = "1.14.3"
 }
 
 # ======================================
