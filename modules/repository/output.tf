@@ -33,5 +33,6 @@ output "github_pubnlic_repos" {
     {repo_name = "gin-todo", visibility = "private" , archived = false , description = "Ginを用いたRest APIでのTodoアプリ", allow_auto_merge = false},
     {repo_name = "nextjs-sandbox", visibility = "public" , archived = false , description = "Next.jsの学習用リポジトリ", allow_auto_merge = false},
     {repo_name = "nextjs", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
+    {repo_name = "app-play", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
   ]
 }
