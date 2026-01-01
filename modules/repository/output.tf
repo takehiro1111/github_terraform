@@ -34,6 +34,6 @@ output "github_pubnlic_repos" {
     {repo_name = "nextjs-sandbox", visibility = "public" , archived = false , description = "Next.jsの学習用リポジトリ", allow_auto_merge = false},
     {repo_name = "nextjs", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
     {repo_name = "app-play", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
-    {repo_name = "shifb", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
+    {repo_name = "shiftb", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
   ]
 }
