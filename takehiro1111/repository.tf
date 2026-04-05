@@ -54,38 +54,3 @@ import {
   to = github_repository.personal_repos["react-next"]
   id = "react-next"
 }
-
-removed {
-  from = github_repository.personal_repos["menta-flask-todo"]
-  lifecycle {
-    destroy = false
-  }
-}
-
-removed {
-  from = github_repository.personal_repos["menta-go-lesson"]
-  lifecycle {
-    destroy = false
-  }
-}
-
-removed {
-  from = github_repository.personal_repos["menta-python-lesson"]
-  lifecycle {
-    destroy = false
-  }
-}
-
-removed {
-  from = github_repository.personal_repos["menta-react-next"]
-  lifecycle {
-    destroy = false
-  }
-}
-
-removed {
-  from = github_repository.personal_repos["menta-typescript-lesson"]
-  lifecycle {
-    destroy = false
-  }
-}
