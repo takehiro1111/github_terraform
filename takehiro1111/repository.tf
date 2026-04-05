@@ -29,3 +29,28 @@ resource "github_repository" "personal_repos" {
     ]
   }
 }
+
+import {
+  to = github_repository.personal_repos["flask-todo"]
+  id = "flask-todo"
+}
+
+import {
+  to = github_repository.personal_repos["go-basic"]
+  id = "go-basic"
+}
+
+import {
+  to = github_repository.personal_repos["python-basic"]
+  id = "python-basic"
+}
+
+import {
+  to = github_repository.personal_repos["typescript-basic"]
+  id = "typescript-basic"
+}
+
+import {
+  to = github_repository.personal_repos["react-next"]
+  id = "react-next"
+}
