@@ -1,3 +1,11 @@
+// tt_platform から infra-hub へのリネームに追随する。
+// for_each のキーが repo_name のため、この宣言が無いと destroy → create（＝リポジトリ削除）になる。
+// apply 後は削除してよい
+moved {
+  from = github_repository.personal_repos["tt_platform"]
+  to   = github_repository.personal_repos["infra-hub"]
+}
+
 resource "github_repository" "personal_repos" {
   for_each = { for k, v in module.repo.github_pubnlic_repos : v.repo_name => v }
 
