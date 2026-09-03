@@ -38,5 +38,6 @@ output "github_pubnlic_repos" {
     {repo_name = "resume", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
     {repo_name = "self_promotion_suga", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
     {repo_name = "tt_platform", visibility = "private" , archived = false , description = "", allow_auto_merge = false},
+    {repo_name = "local", visibility = "public" , archived = false , description = "", allow_auto_merge = false},
   ]
 }
