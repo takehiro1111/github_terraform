@@ -112,8 +112,11 @@ jobs:
         working-directory: ${{ matrix.target.target }}
         if: ${{ steps.init.outcome == 'success' }}
         run: |
-          tfcmt plan -patch -- terraform plan -no-color -input=false -var="github_token=${{ secrets.PAT_TOKEN }}"
+          tfcmt plan -patch -- terraform plan -no-color -input=false
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          GITHUB_APP_ID: 2215622
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.SECRET_KEY }}
 
 
