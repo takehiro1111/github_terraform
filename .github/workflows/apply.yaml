@@ -109,6 +109,9 @@ jobs:
       - name: terraform apply
         working-directory: ${{ matrix.target.target }}
         run: |
-          tfcmt apply -- terraform apply -auto-approve -var="github_token=${{ secrets.PAT_TOKEN }}"
+          tfcmt apply -- terraform apply -auto-approve
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          GITHUB_APP_ID: 2215622
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.SECRET_KEY }}
